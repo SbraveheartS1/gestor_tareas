@@ -106,11 +106,17 @@ public class TareasController {
 	@PutMapping("/{id}")
 	public Mono<ResponseEntity<Tareas>> actualizar(@Valid @RequestBody Tareas obj, @PathVariable String id){
 		return service.findById(id).flatMap( p -> {
+			
+			if(p.getFechacreacion() == null) {
+				p.setFechacreacion(new Date());
+			}
+			
+			p.setId(obj.getId());
 			p.setCompletada(obj.getCompletada());
 			p.setDescripcion(obj.getDescripcion());
 			p.setFechavencimiento(obj.getFechavencimiento());
 			p.setTitulo(obj.getTitulo());	
-			return service.save(obj);
+			return service.save(p);
 		}).map( p -> ResponseEntity
 				.created( URI.create("api/tareas/".concat(id)))
 				.contentType(MediaType.APPLICATION_JSON_UTF8)
