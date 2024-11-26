@@ -2,24 +2,23 @@
 
 <div class="container-title">
   <label class="title-main"> Listado de Tareas </label>
+  <div class="title-underline"></div>
 </div>
 
 <div class="container-body">
-<!--   <div class="container-buttons">
-    <input type="text" class="buttons-button--add">
-    <input type="text" class="buttons-button--modify">
-    <input type="text" class="buttons-button--delete">
-  </div> -->
+  <div class="container-buttons">
+    <button class="element-button element-button--add" (click)="addTask()">Añadir (+)</button>
+  </div>
+
   <ul class="container-list">
-    <li class="list-elements">
+    <li class="list-elements" *ngFor="let task of taskList; index as i" >
         <div class="elements-element">
           <div class="element-box">
-            <label class="element-name"> Tarea de Prueba</label>
+            <input type="text" class="element-name" [(ngModel)]="task.titulo">
           </div>
           <div class="element-buttons">
-            <button class="element-button--add">Añadir </button>
-            <button class="element-button--modify">Editar </button>
-            <button class="element-button--delete">Eliminar </button>
+            <button class="element-button element-button--modify" (click)="editTask(task)">Editar </button>
+            <button class="element-button element-button--delete" (click)="deleteTask(i)">Eliminar </button>
           </div>
         </div>
     </li>

@@ -1,55 +1,145 @@
-.container-main{
 
+
+.container-main{
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  border-radius: 0;
+
+  grid-template-areas: 'content';
+  grid-template-columns: 100%;
+  overflow-x: hidden;
+
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --black: black;
+
+  --blue-dark: #0056b3;
+  --indigo-dark: #520dc2;
+  --purple-dark: #593399;
+  --pink-dark: #b82c6e;
+  --red-dark: #a71d2a;
+  --orange-dark: #c75a0b;
+  --yellow-dark: #d39e00;
+  --green-dark: #1c7430;
+  --teal-dark: #198a71;
+  --cyan-dark: #117a8b;
+  --gray-dark-dark: #23272b;
+
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.container-title,.container-body,.list-elements{
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
 .container-title{
-
+  display: grid;
+  flex-direction: row;
 }
 
 .title-main{
+  font-weight: bold;
+  font-size: xx-large;
+}
 
+.title-underline{
+  height: 1px;
+  width:100%;
+  background-color: var(--black);
 }
 
 .container-body{
-
+  display: grid;
+  justify-content: center;
+  flex-direction: row;
 }
 
 .container-buttons{
-
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
 }
 
 .container-list{
-
+  width: 100%;
+  height: 100%;
 }
 
 .list-elements{
-
 }
 
 .elements-element{
-
+  display: flex;
+  justify-content: center;
 }
 
 .element-name{
-
+  margin-right: 1rem;
+  padding: 0.2rem 2rem;
+  border-radius: 0.5rem;
 }
 
 .element-box{
-
 }
 
 .element-buttons{
+  display: flex;
+  gap: 0.5rem
+}
 
+.element-button{
+  border-radius: 0.5rem;
+  border-style: none;
+  padding: 0.3rem 2rem;
+  color: var(--black);
+}
+
+.element-button:hover{
+  color: var(--white);
+  transition-duration: 0.05s;
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--black);
 }
 
 .element-button--add{
-
+  padding: 1rem 8rem;
+  font-size: larger;
+  background-color: var(--green);
 }
 
 .element-button--modify{
-
+  background-color: var(--yellow);
 }
 
 .element-button--delete{
+  background-color: var(--red);
+}
 
+.element-button--add:hover{
+  background-color: var(--green-dark);
+}
+
+.element-button--modify:hover{
+  background-color: var(--yellow-dark);
+}
+
+.element-button--delete:hover{
+  background-color: var(--red-dark);
 }
